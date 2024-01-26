@@ -10,29 +10,28 @@ import java.time.LocalDate;
 public class Paper {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  private Integer id;
+  private Integer paperId;
 
   private String title;
   private Boolean approved;
-  private String author;
   private String shortdesc;
-  private String abstractText;
+  private String abstractUrl;
 
   // Additional fields
-  private String[] tags;
+  private String tags;
   private LocalDate uploadDate;
   private Long authorId;
 
   public Paper() {
   }
 
-  public Paper(String title, Boolean approved, String author, String shortdesc, String abstractText,
-               String[] tags, LocalDate uploadDate, Long authorId) {
+  public Paper(String title, Boolean approved, String shortdesc, String abstractUrl,
+               String tags, LocalDate uploadDate, Long authorId) {
+    
     this.title = title;
     this.approved = approved;
-    this.author = author;
     this.shortdesc = shortdesc;
-    this.abstractText = abstractText;
+    this.abstractUrl = abstractUrl;
     this.tags = tags;
     this.uploadDate = uploadDate;
     this.authorId = authorId;
@@ -62,14 +61,6 @@ public class Paper {
     this.approved = approved;
   }
 
-  public String getAuthor() {
-    return author;
-  }
-
-  public void setAuthor(String author) {
-    this.author = author;
-  }
-
   public String getShortdesc() {
     return shortdesc;
   }
@@ -79,18 +70,18 @@ public class Paper {
   }
 
   public String getAbstractText() {
-    return abstractText;
+    return abstractUrl;
   }
 
   public void setAbstractText(String abstractText) {
-    this.abstractText = abstractText;
+    this.abstractUrl = abstractText;
   }
 
-  public String[] getTags() {
+  public String getTags() {
     return tags;
   }
 
-  public void setTags(String[] tags) {
+  public void setTags(String tags) {
     this.tags = tags;
   }
 
