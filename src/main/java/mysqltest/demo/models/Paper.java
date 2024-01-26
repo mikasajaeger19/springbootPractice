@@ -38,11 +38,11 @@ public class Paper {
   }
 
   public Integer getId() {
-    return id;
+    return paperId;
   }
 
   public void setId(Integer id) {
-    this.id = id;
+    this.paperId = id;
   }
 
   public String getTitle() {
