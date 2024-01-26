@@ -4,8 +4,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import java.time.LocalDate;
 
-@Entity // This tells Hibernate to make a table out of this class
+@Entity
 public class Paper {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,19 +18,26 @@ public class Paper {
   private String shortdesc;
   private String abstractText;
 
-  // Constructors
+  // Additional fields
+  private String[] tags;
+  private LocalDate uploadDate;
+  private Long authorId;
+
   public Paper() {
   }
 
-  public Paper(String title, Boolean approved, String author, String shortdesc, String abstractText) {
+  public Paper(String title, Boolean approved, String author, String shortdesc, String abstractText,
+               String[] tags, LocalDate uploadDate, Long authorId) {
     this.title = title;
     this.approved = approved;
     this.author = author;
     this.shortdesc = shortdesc;
     this.abstractText = abstractText;
+    this.tags = tags;
+    this.uploadDate = uploadDate;
+    this.authorId = authorId;
   }
 
-  // Getter and Setter methods
   public Integer getId() {
     return id;
   }
@@ -76,5 +84,29 @@ public class Paper {
 
   public void setAbstractText(String abstractText) {
     this.abstractText = abstractText;
+  }
+
+  public String[] getTags() {
+    return tags;
+  }
+
+  public void setTags(String[] tags) {
+    this.tags = tags;
+  }
+
+  public LocalDate getUploadDate() {
+    return uploadDate;
+  }
+
+  public void setUploadDate(LocalDate uploadDate) {
+    this.uploadDate = uploadDate;
+  }
+
+  public Long getAuthorId() {
+    return authorId;
+  }
+
+  public void setAuthorId(Long authorId) {
+    this.authorId = authorId;
   }
 }
