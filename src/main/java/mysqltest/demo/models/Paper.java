@@ -69,12 +69,12 @@ public class Paper {
     this.shortdesc = shortdesc;
   }
 
-  public String getAbstractText() {
+  public String getAbstractUrl() {
     return abstractUrl;
   }
 
-  public void setAbstractText(String abstractText) {
-    this.abstractUrl = abstractText;
+  public void setAbstractText(String abstractUrl) {
+    this.abstractUrl = abstractUrl;
   }
 
   public String getTags() {
