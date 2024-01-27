@@ -18,7 +18,6 @@ public class SecurityConfig {
                 auth.anyRequest().authenticated();
             })
             .oauth2Login(null)
-            .formLogin(null)
             .build();
     }
 
